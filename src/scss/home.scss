@@ -1,0 +1,96 @@
+//====================================================================================================
+.page__container{
+  padding-top: rem(150);
+}
+.menu {
+
+  // .menu__body
+  &__body {
+    background-color: #303640;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+  }
+
+  // .menu__list
+  &__list {
+    padding: 30px 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  // .menu__item
+  &__item {
+    position: relative;
+    overflow: hidden;
+    color: #a6aab4;
+    transition: color 0.8s ease 0s;
+  }
+.menu__item:hover,
+.menu__item._active{
+  color: #fff;
+}
+  // .menu__link
+  &__link {
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 20px 80px 20px 30px;
+    display: block;
+  }
+
+  // .menu__active
+  &__active {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 8px;
+    height: 100%;
+  }
+  &__active span{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: all 0.5s ease 0s;
+    border-radius: 0 5px 5px 0;
+  }
+}
+.menu__body{
+  border: 1px solid transparent;
+  box-shadow: inset 0 0 15px 0 transparent;
+}
+.loaded .menu__body{
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.25);
+  transition: all 1s ease 1.5s;
+}
+.menu__link{
+  transform: translate(-100%, 0);
+}
+.loaded .menu__link{
+  transform: translate(0, 0);
+  transition: transform 1s ease;
+}
+.loaded .menu__item:nth-child(1) .menu__link{
+  transition-delay: 0.2s;
+}
+.loaded .menu__item:nth-child(2) .menu__link{
+  transition-delay: 0.4s;
+}
+.loaded .menu__item:nth-child(3) .menu__link{
+  transition-delay: 0.6s;
+}
+.loaded .menu__item:nth-child(4) .menu__link{
+  transition-delay: 0.8s;
+}
+.menu__active{
+  transform: translate(-100%, 0);
+}
+
+.loaded .menu__active{
+  transform: translate(0, 0);
+  transition: transform 0.5s ease 2s;
+}
+
+//====================================================================================================
