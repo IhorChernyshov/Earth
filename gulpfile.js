@@ -23,7 +23,7 @@ import ftp from 'vinyl-ftp';
 import gutil from 'gulp-util';
 import * as nodePath from 'path';
 
-const projectName = 'public';
+const projectName = 'docs';
 const srcFolder = "src";
 const rootFolder = nodePath.basename(nodePath.resolve());
 const { src, dest } = gulp;
@@ -69,7 +69,7 @@ function addGitIgnore() {
 		fs.appendFile('./.gitignore', 'startTemplate/\r\n', cb);
 		fs.appendFile('./.gitignore', 'node_modules/\r\n', cb);
 		fs.appendFile('./.gitignore', '.gitignore\r\n', cb);
-		fs.appendFile('./.gitignore', 'public/\r\n', cb);
+		fs.appendFile('./.gitignore', 'docs/\r\n', cb);
 		fs.appendFile('./.gitignore', 'Source/\r\n', cb);
 		fs.appendFile('./.gitignore', 'version.json\r\n', cb);
 		fs.appendFile('./.gitignore', projectName + '\r\n', cb);
