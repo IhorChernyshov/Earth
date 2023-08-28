@@ -2,9 +2,10 @@
 // import { isMobile } from "./functions.js";
 // import { formsModules } from "./forms/forms.js";
 
+import Swiper from 'swiper/bundle';
+
 window.addEventListener('load',windowLoad);
-
-
+const swiper = new Swiper;
 function windowLoad(){
     document.documentElement.classList.add('loaded')
 
@@ -26,7 +27,7 @@ function windowLoad(){
             let myHeight = window.innerHeight;
             return myWidth
         };
-        if(!menuActiveItem && displayWindowSize() > 829.98){
+        if(!menuActiveItem && displayWindowSize() > 991.98){
             menuItems[0].classList.add('_active');
             console.log('I rrrrrrr')
             menuActiveElement.style.cssText = `
@@ -34,7 +35,7 @@ function windowLoad(){
             top:${menuItems[0].offsetTop}px;
             background-color: ${menuItems[0].dataset.activeColor};
             `;
-        } else if(!menuActiveItem || displayWindowSize() < 829.98){
+        } else if(!menuActiveItem || displayWindowSize() < 991.98){
             console.log('I 0000000')
             menuActiveElement.style.cssText = `
             height:${menuItems[0].offsetHeight}px;
@@ -71,4 +72,68 @@ function windowLoad(){
         background-color: ${menuParentItem.dataset.activeColor};
         `;
     }
+
+    window.addEventListener('load', windowLoaded);
+    function windowLoaded() {
+        if (document.querySelector('.product__slider')){
+            new Swiper('.product__slider',{
+                loop:true,
+                speed:1000,
+                parallax:true,
+                mousewheel:true,
+                keyboard:true,
+                on:{
+                    init: function (){
+                        document.documentElement.classList.add('loa')
+                    }
+                }
+            });
+        }
+    }
 }
+
+//Add to cart animation
+
+const cart = document.querySelector('.header__cart');
+let cartValue = document.querySelector('.header__cart span');
+const speedAnimation = 1000;
+
+document.addEventListener('click', function (e){
+    const targetElement = e.target;
+    if (targetElement.closest('.product__buy')){
+        const productSlide = targetElement.closest('.product__slide');
+        const productImage = productSlide.querySelector('.product__picture');
+        const productImageFly = productImage.cloneNode(true);
+
+        const cartPos = {
+            left: cart.getBoundingClientRect().left,
+            top: cart.getBoundingClientRect().top
+        }
+
+        productImageFly.style.cssText = `
+        position:fixed;
+        left:${productImage.getBoundingClientRect().left}px;
+        top:${productImage.getBoundingClientRect().top}px;
+        width:${productImage.offsetWidth}px;
+        height:${productImage.offsetHeight}px;
+        transition:all ${speedAnimation}ms ease;
+        `;
+
+        document.body.append(productImageFly)
+
+        setTimeout(() => {
+            productImageFly.style.left = `${cartPos.left}px`
+            productImageFly.style.top = `${cartPos.top}px`
+            productImageFly.style.width = `0px`
+            productImageFly.style.height = `0px`
+            productImageFly.style.opacity = `0.5`
+        },0);
+
+        setTimeout(() =>{
+            cartValue.innerHTML = ++cartValue.innerHTML
+            productImageFly.remove()
+        },speedAnimation);
+    }
+
+});
+

@@ -4,30 +4,53 @@
 "title":"Главная"
 })
 <body>
+
 <div class="wrapper">
     @@include('html/_header.htm',{})
-    <main class="page">
+    <section class="page">
         <div class="menu">
-                <nav class="menu__body">
-                    <ul class="menu__list">
-                        <li data-active-color="#FFFFFF" class="menu__item"><a href="#" class="menu__link">Home</a></li>
-                        <li data-active-color="#FF6961" class="menu__item"><a href="#" class="menu__link">About</a></li>
-                        <li data-active-color="#779ECB" class="menu__item"><a href="#" class="menu__link">Portfolio</a></li>
-                        <li data-active-color="#77DD77" class="menu__item"><a href="#" class="menu__link">Contacts</a></li>
-                    </ul>
-                    <div class="menu__active"><span></span></div>
-                </nav>
-                <div class="earth">
-                    <div class=" icon-menu"><span></span></div>
-                    <div class="earth__body">
-                        <div class="earth__title title">Earth</div>
-                        <div class="grad">
+            <nav class="menu__body">
+                <ul class="menu__list">
+                    <li data-active-color="#FFFFFF" class="menu__item"><a href="#" class="menu__link">Home</a></li>
+                    <li data-active-color="#FF6961" class="menu__item"><a href="#" class="menu__link">About</a></li>
+                    <li data-active-color="#779ECB" class="menu__item"><a href="#" class="menu__link">Portfolio</a></li>
+                    <li data-active-color="#77DD77" class="menu__item"><a href="#" class="menu__link">Contacts</a></li>
+                </ul>
+                <div class="menu__active"><span></span></div>
+            </nav>
+            <div class="earth">
+                <div class=" icon-menu"><span></span></div>
+                <div class="earth__body">
+                    <div class="earth__title title">Earth</div>
+                    <div class="grad">
                         <a href="#" class="earth__button button">Go ahead</a>
-                        </div>
                     </div>
                 </div>
+            </div>
         </div>
-    </main>
+    </section>
+    <section class="about">
+        <div class="about__container">
+            <div class="about__cont">
+        <div class="about__title title">Suggest</div>
+            </div>
+        <div class="about__content">
+            <div class="about__body">
+                <h2 class="about__subtitle">Your People</h2>
+                <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+            </div>
+            <div class="about__body">
+                <h2 class="about__subtitle">Career grow</h2>
+                <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+            </div>
+            <div class="about__body">
+                <h2 class="about__subtitle">Professional</h2>
+                <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
     @@include('html/_footer.htm',{})
 </div>
 <!-- @@include('html/_popup.htm',{}) -->

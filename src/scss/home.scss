@@ -15,7 +15,7 @@
     overflow: hidden;
     border-radius: 0 0 0 0 ;
     flex: 1 0 170px;
-    @media (max-width: em(829.98)) {
+    @media (max-width: $tablet) {
       position: fixed;
       flex: 1 1 170px;
       height: 1000px;
@@ -29,17 +29,6 @@
       transition: all 0.3s ease 0s;
       background-color:#1b2327 ;
       padding-top: rem(20);
-      //&::before {
-      //  content: '';
-      //  position: fixed;
-      //  top: 0;
-      //  left: -100%;
-      //  transition: all 0.3s ease 0s;
-      //  width: 100%;
-      //  @include adaptiveValue("height", 134, 100,768,320,2);
-      //  background-color: #192123;
-      //  z-index: 2;
-      //}
       .menu-open &{
         left: 0;
         &::before {
@@ -217,7 +206,7 @@
 //Burger
 .icon-menu {
   display: none;
-  @media (max-width: em(829.98)) {
+  @media (max-width: $tablet) {
     display: block;
     position: absolute;
     top: 0;
@@ -262,5 +251,127 @@
     }
   }
 }
+
+//========================================================================================================================================================$1
+
+
+//========================================================================================================================================================$1
+.about {
+  padding: rem(150) 0;
+&__cont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+  // .about__title
+  &__title {
+    font-size: rem(60);
+    @include adaptiveValue("font-size", 60, 23, 600,320);
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: rem(50);
+    position: relative;
+    padding-bottom: rem(10);
+    border-bottom: 4px solid #fff;
+
+    //&::before {
+    //  content: '';
+    //  position: absolute;
+    //  left: 0;
+    //  bottom: 0;
+    //  display: flex;
+    //  justify-content: center;
+    //  align-items: center;
+    //  width: 210px;
+    //  height: 4px;
+    //  background-color: #ffffff;
+    //  @include adaptiveValue("width", 210, 100,600,320);
+    //  @media (max-width: em(581.98)) {
+    //    left: 0;
+    //  }
+    //  @media (max-width: em(562.98)) {
+    //    left: 2%;
+    //  }
+    //  @media (max-width: em(518.98)) {
+    //    left: 6%;
+    //  }
+    //  @media (max-width: em(482.98)) {
+    //    left: 11%;
+    //  }
+    //  @media (max-width: em(434.98)) {
+    //    left: 15%;
+    //  }
+    //  @media (max-width: em(394.98)) {
+    //    left: 19%;
+    //  }
+    //  @media (max-width: em(364.98)) {
+    //    left: 24%;
+    //  }
+    //
+    //}
+  }
+
+  // .about__content
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(30);
+    flex-wrap: wrap;
+    @media (max-width: em(1030.98)) {
+     gap: rem(15);
+
+    }
+  }
+
+  // .about__body
+  &__body {
+    flex: 0 1 31.333%;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.25);
+    transition: all 1s ease 0.5s;
+    padding: 30px 5px;
+    //@media (max-width: em(543.98)) {
+    //  flex: 1 1 90.333%;
+    //  padding: 15px 0;
+    //}
+    @media (max-width: $tablet) {
+      flex: 1 1 90.333%;
+      padding: 15px 0;
+    }
+  }
+
+  // .about__subtitle
+  &__subtitle {
+    font-size: rem(20);
+    @include adaptiveValue("font-size", 20, 17, 600,320);
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: rem(10);
+  }
+
+  // .about__text
+  &__text {
+    font-size: rem(17);
+    @include adaptiveValue("font-size", 17, 15, 600,320);
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin-bottom: rem(20);
+  }
+}
+
+.title {
+}
+//========================================================================================================================================================$1
+
+
+//========================================================================================================================================================$1
+
 
 //========================================================================================================================================================$1
